@@ -1,0 +1,28 @@
+abstract class FoodOrder {
+    String orderId;
+    String customerName;
+
+    abstract double calculateTotal();  // Abstract because calculation differs
+
+    void generateBill() {  // Concrete because printing bill is common
+        System.out.println("Bill generated for Order ID: " + orderId);
+        System.out.println("Customer: " + customerName);
+        System.out.println("Total Amount: " + calculateTotal());
+    }
+}
+
+class RestaurantOrder extends FoodOrder {
+    double basePrice = 500;
+    @Override
+    double calculateTotal() {
+        return basePrice + (basePrice * 0.05); // 5% GST
+    }
+}
+
+class CloudKitchenOrder extends FoodOrder {
+    double basePrice = 400;
+    @Override
+    double calculateTotal() {
+        return basePrice + 50; // + fixed delivery charge
+    }
+}
