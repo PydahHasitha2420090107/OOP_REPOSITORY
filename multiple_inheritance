@@ -1,0 +1,29 @@
+// Base class
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating...");
+    }
+}
+
+// First level derived class
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking...");
+    }
+}
+
+// Second level derived class
+class Puppy extends Dog {
+    void weep() {
+        System.out.println("Puppy is weeping...");
+    }
+}
+
+public class PetManagement {
+    public static void main(String[] args) {
+        Puppy puppy = new Puppy();
+        puppy.eat();   // From Animal
+        puppy.bark();  // From Dog
+        puppy.weep();  // From Puppy
+    }
+}
