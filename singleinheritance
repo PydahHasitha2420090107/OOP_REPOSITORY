@@ -1,0 +1,22 @@
+// Base class
+class Vehicle {
+    void move() {
+        System.out.println("The vehicle is moving...");
+    }
+}
+
+// Derived class
+class Car extends Vehicle {
+    void fuelType() {
+        System.out.println("This car runs on petrol.");
+    }
+}
+
+// Main class
+public class VehicleSystem {
+    public static void main(String[] args) {
+        Car myCar = new Car();
+        myCar.move();      // Inherited from Vehicle
+        myCar.fuelType();  // Specific to Car
+    }
+}
