@@ -1,0 +1,39 @@
+abstract class Course {
+    String courseName;
+    String instructor;
+
+    abstract void startCourse();  // Different for each course
+    abstract void endCourse();    // Different for each course
+
+    void getCourseDetails() {     // Common method
+        System.out.println("Course: " + courseName + " | Instructor: " + instructor);
+    }
+
+    void giveCertificate() {      // Same for all courses
+        System.out.println("Certificate awarded for course: " + courseName);
+    }
+}
+
+class ProgrammingCourse extends Course {
+    @Override
+    void startCourse() {
+        System.out.println("Programming course started with coding setup.");
+    }
+
+    @Override
+    void endCourse() {
+        System.out.println("Programming course ended with final project.");
+    }
+}
+
+class LanguageCourse extends Course {
+    @Override
+    void startCourse() {
+        System.out.println("Language course started with alphabets.");
+    }
+
+    @Override
+    void endCourse() {
+        System.out.println("Language course ended with oral exam.");
+    }
+}
