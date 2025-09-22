@@ -1,0 +1,34 @@
+// Base class
+class Appliance {
+    void turnOn() {
+        System.out.println("Appliance is turned on.");
+    }
+
+    void turnOff() {
+        System.out.println("Appliance is turned off.");
+    }
+}
+
+// First level derived class
+class Fan extends Appliance {
+    void rotate() {
+        System.out.println("Fan is rotating...");
+    }
+}
+
+// Second level derived class
+class CeilingFan extends Fan {
+    void setSpeed(int speed) {
+        System.out.println("Ceiling fan speed set to " + speed);
+    }
+}
+
+public class SmartHomeSystem {
+    public static void main(String[] args) {
+        CeilingFan cf = new CeilingFan();
+        cf.turnOn();      // From Appliance
+        cf.rotate();      // From Fan
+        cf.setSpeed(3);   // From CeilingFan
+        cf.turnOff();     // From Appliance
+    }
+}
